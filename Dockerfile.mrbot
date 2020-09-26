@@ -28,8 +28,8 @@ RUN ls -l rasa-webchat
 
 WORKDIR /app/rasa-webchat
 
-COPY ./docker-local/webpack.dev.js .
-COPY ./docker-local/index.html .
+COPY ./webpack.dev.js .
+COPY ./index.html .
 RUN rm package-lock.json
 
 EXPOSE 8080

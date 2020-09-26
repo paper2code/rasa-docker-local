@@ -32,8 +32,8 @@ RUN pip3 list | grep rasa
 VOLUME ["/app"]
 WORKDIR /app
 
-COPY ./docker-local/endpoints.yml .
-COPY ./docker-local/config.yml .
+COPY ./endpoints.yml .
+COPY ./config.yml .
 
 # expose port for rasa server
 EXPOSE 5005
@@ -46,7 +46,7 @@ EXPOSE 8888
 # expose port for ssh
 EXPOSE 22
 
-COPY ./docker-local/entrypoint.sh /entrypoint.sh
+COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
